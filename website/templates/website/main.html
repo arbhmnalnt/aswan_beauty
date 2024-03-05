@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    {% load static %}
+    {% block title %}{% endblock %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGTX//9k1///ZNf//2TX//9k1///ZNf//2TX//9k1///ZNf//2TX//9Suv//IB8j/x+M6P8fjOj/AAAAAAAAAABk1///ZNf//2TX//9k1///ZNf//2TX//9k1///ZNf//2TX//9k1///Urr//zOn//8gHyP/H4zo/wAAAAAAAAAAZNf//2TX//9k1///ZNf//2TX//8gHyP/ZNf//2TX//9k1///ZNf//1K6//8zp///M6f//x+M6P8AAAAAAAAAAGTX//9k1///ZNf//2TX//8gHyP/iGL//yAfI/9k1///ZNf//2TX//9Suv//M6f//zOn//8fjOj/AAAAAAAAAABdxOj/ZNf//2TX//8gHyP/iGL//4hi//+IYv//IB8j/2TX//9k1///Urr//zOn//8zp///IH/Q/wAAAAAAAAAAIB8j/2TX//8gHyP/iGL//4hi//+IYv//iGL//4BZ9v8gHyP/ZNf//yMnLv8zp///M6f//yAfI/8AAAAAAAAAACAfI/9k1///IB8j/4hi//+IYv//iGL//4hi//+IYv//IB8j/2TX//8gHyP/M6f//zOn//8gHyP/AAAAAAAAAABk1//RZNf//2TX//8gHyP/iGL//yAfI/+IYv//IB8j/2TX//9k1///IB8j/zOn//8zp///IB8j/wAAAAAAAAAAAAAAAGTX//9k1///ZNf//2TX//9k1///ZNf//2TX//9k1///Vb///yAfI/8zp///M6f//yAfI/8AAAAAAAAAACAfI/9k1///ZNf//2TX//9k1///ZNf//2TX//9k1///ZNf//1K6//8gHyP/M6f//zOn//8gHyP/AAAAAAAAAAAAAAAAZNf//yAfI/9k1///ZNf//2TX//9k1///ZNf//yAfI/9Suv//KmGN/zOn//8fjOj/AAAAAAAAAAAAAAAAAAAAAAAAAAAgHyP/AAAAAAAAAAAgHyP/AAAAAAAAAAAgHyP/AAAAAAAAAAAgHyP/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIR8kpgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgHyP/AAAAAAAAAAAgHyP/IB8j/wAAAAAAAAAAIB8j/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//8AAIABAACAAQAAgAEAAIABAACAAQAAgAEAAIABAACAAQAAwAEAAIABAADAAwAA7bcAAP/3AAD2bwAA//8AAA==" rel="icon" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'website/css/bootstrap.min.css' %}"/>
+    <style>
+        {% block style %}
+        {% endblock %}
+    </style>
+</head>
+<body style="direction:rtl">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="{% url 'website:products_list' %}">Aswan Beauty Online Store</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'website:products_list' %}">الرئيسية <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Disabled</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">باقى لينكات الوصول السريع</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                        <a class="dropdown-item" href="#">قائمة العملاء</a>
+                        <a class="dropdown-item" href="#">اضافة عميل جديد</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+            </ul>
+            
+        </div>
+    </nav>
+    <main role="main" class="container mt-5 pt-3">
+        {% block content %}{% endblock %}
+    </main>
+    
+    <script src="{% static 'website/js/jquery.min.js' %}"></script>
+    
+    <script>
+        {% block script %}{% endblock %}
+    </script>
+    
+</body>
