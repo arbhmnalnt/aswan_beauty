@@ -28,12 +28,12 @@ class Tag(models.Model):
 class Product(TimeStampMixin, models.Model) :
     nameEn = models.CharField(max_length=100,null=True, blank=True, verbose_name="اسم المنتج بالانجليزى")
     nameAr = models.CharField(max_length=100,null=True, blank=True, verbose_name="اسم المنتج بالعربى")
-    smallDescription = models.CharField(max_length=250, null=True, blank=True, verbose_name="وصف قصير")
-    longDescription  = models.TextField(max_length=1000, null=True, blank=True, verbose_name="الوصف الكامل")
+    smallDescription = models.TextField(max_length=1000, null=True, blank=True, verbose_name="وصف قصير")
+    longDescription  = models.TextField(max_length=2500, null=True, blank=True, verbose_name="الوصف الكامل")
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='products', verbose_name="التصنيف")
     featured = models.BooleanField(default=False, verbose_name="المنتج المميز")
     tags = models.ManyToManyField(Tag, blank=True, verbose_name="الوسوم")
-    slug = models.SlugField(max_length=250, unique=True, null=True, blank=True, verbose_name="اسم المنتج متوافق")
+    slug = models.SlugField(max_length=1000, unique=True, null=True, blank=True, verbose_name="اسم المنتج متوافق")
     
     def save(self, *args, **kwargs):
         # Update slug if product name has changed
@@ -44,13 +44,14 @@ class Product(TimeStampMixin, models.Model) :
 
         if not self.slug:
             slugEn = slugify(self.nameEn) # type: ignore
-            self.slug = f"{slugEn}"
+            # print(f"\n slug => {slugEn} \n")
+            self.slug = slugEn
         super().save(*args, **kwargs)
 
     def __str__(self):
         return  str(self.nameEn) + " /|\\ " + str(self.nameAr)
 
-class prices4sizes(TimeStampMixin, models.Model):
+class Prices4sizes(TimeStampMixin, models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="prices",verbose_name=("المنتج"))
     img     = models.URLField(null=True, blank=True, verbose_name="رابط الصورة")
     price = models.DecimalField(max_digits=6,decimal_places=2,null=True, blank=True, verbose_name="السعر")

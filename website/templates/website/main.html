@@ -1,51 +1,55 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
     {% load static %}
-    {% block title %}{% endblock %}
+    <title>{% block title %}{% endblock %}</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGTX//9k1///ZNf//2TX//9k1///ZNf//2TX//9k1///ZNf//2TX//9Suv//IB8j/x+M6P8fjOj/AAAAAAAAAABk1///ZNf//2TX//9k1///ZNf//2TX//9k1///ZNf//2TX//9k1///Urr//zOn//8gHyP/H4zo/wAAAAAAAAAAZNf//2TX//9k1///ZNf//2TX//8gHyP/ZNf//2TX//9k1///ZNf//1K6//8zp///M6f//x+M6P8AAAAAAAAAAGTX//9k1///ZNf//2TX//8gHyP/iGL//yAfI/9k1///ZNf//2TX//9Suv//M6f//zOn//8fjOj/AAAAAAAAAABdxOj/ZNf//2TX//8gHyP/iGL//4hi//+IYv//IB8j/2TX//9k1///Urr//zOn//8zp///IH/Q/wAAAAAAAAAAIB8j/2TX//8gHyP/iGL//4hi//+IYv//iGL//4BZ9v8gHyP/ZNf//yMnLv8zp///M6f//yAfI/8AAAAAAAAAACAfI/9k1///IB8j/4hi//+IYv//iGL//4hi//+IYv//IB8j/2TX//8gHyP/M6f//zOn//8gHyP/AAAAAAAAAABk1//RZNf//2TX//8gHyP/iGL//yAfI/+IYv//IB8j/2TX//9k1///IB8j/zOn//8zp///IB8j/wAAAAAAAAAAAAAAAGTX//9k1///ZNf//2TX//9k1///ZNf//2TX//9k1///Vb///yAfI/8zp///M6f//yAfI/8AAAAAAAAAACAfI/9k1///ZNf//2TX//9k1///ZNf//2TX//9k1///ZNf//1K6//8gHyP/M6f//zOn//8gHyP/AAAAAAAAAAAAAAAAZNf//yAfI/9k1///ZNf//2TX//9k1///ZNf//yAfI/9Suv//KmGN/zOn//8fjOj/AAAAAAAAAAAAAAAAAAAAAAAAAAAgHyP/AAAAAAAAAAAgHyP/AAAAAAAAAAAgHyP/AAAAAAAAAAAgHyP/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIR8kpgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgHyP/AAAAAAAAAAAgHyP/IB8j/wAAAAAAAAAAIB8j/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//8AAIABAACAAQAAgAEAAIABAACAAQAAgAEAAIABAACAAQAAwAEAAIABAADAAwAA7bcAAP/3AAD2bwAA//8AAA==" rel="icon" type="image/x-icon">
-    <link rel="stylesheet" href="{% static 'website/css/bootstrap.min.css' %}"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" integrity="sha384-dpuaG1suU0eT09tx5plTaGMLBsfDLzUCCUXOY2j/LSvXYuG6Bqs43ALlhIqAJVRb" crossorigin="anonymous">
     <style>
         {% block style %}
         {% endblock %}
     </style>
 </head>
-<body style="direction:rtl">
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand" href="{% url 'website:products_list' %}">Aswan Beauty Online Store</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="{% url 'website:products_list' %}">الرئيسية <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Disabled</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">باقى لينكات الوصول السريع</a>
-                    <div class="dropdown-menu" aria-labelledby="dropdown01">
-                        <a class="dropdown-item" href="#">قائمة العملاء</a>
-                        <a class="dropdown-item" href="#">اضافة عميل جديد</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </li>
-            </ul>
-            
+<body>
+    <div class="row">
+        <div class="col-10 m-auto text-center">
+            <h6 class="btn-info">
+                تشغيل تجريبى
+            </h6>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">ِAswan Beauty E-Store</a>
+            <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="تبديل التنقل">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse" id="navbarCollapse" style="">
+                <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'website:list' %}">الصفحة الرئيسية</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">المنتجات الأكثر مبيعا</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-disabled="true">الأقسام</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="بحث عن منتج" aria-label="بحث">
+                    <button class="btn btn-outline-primary" type="submit">بحث</button>
+                </form>
+            </div>
         </div>
     </nav>
     <main role="main" class="container mt-5 pt-3">
         {% block content %}{% endblock %}
     </main>
     
-    <script src="{% static 'website/js/jquery.min.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     
     <script>
         {% block script %}{% endblock %}

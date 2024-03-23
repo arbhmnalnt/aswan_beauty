@@ -1,0 +1,28 @@
+{% extends "website/main.html" %}
+{% block title %}
+    تفاصيل المنتج
+{% endblock %}
+{% block content %}
+  <h1>{{ product.nameEn }}</h1>
+  <p>{{ product.smallDescription }}</p>
+  <p>Category: {{ product.category }}</p>
+  <p>Featured: {{ product.featured }}</p>
+  <p>Tags:
+    {% for tag in product.tags.all %}
+      {{ tag.name }},
+    {% endfor %}
+  </p>
+
+  <!-- Loop through Prices4sizes for this product -->
+  <ul>
+    {% for price in product.prices.all %}
+      <li>
+        <p>Price: {{ price.price }}</p>
+        <p>Size: {{ price.size }}</p>
+        <p>Color: {{ price.color }}</p>
+        <p>Weight: {{ price.weight }}</p>
+        <p>Stock: {{ price.stock }}</p>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}
