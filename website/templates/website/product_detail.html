@@ -12,10 +12,10 @@
         </div>
         <div class="row pt-md-5">
             <div class="col-12 col-md-6">
-                <p>{{ product.smallDescription }}</p>
-                <p>Category: {{ product.category }}</p>
-                <p>Featured: {{ product.featured }}</p>
-                <p>Tags:
+                <p class="lead border p-4">وصف مختصر للمنتج <br> {{ product.smallDescription }}</p>
+                <p>التصنيف: {{ product.category }}</p>
+                <p>ميزات: {{ product.featured }}</p>
+                <p>الوسوم:
                     {% for tag in product.tags.all %}
                     {{ tag.name }},
                     {% endfor %}
@@ -26,7 +26,7 @@
             <div class="col-12 col-md-6 border">
                 <div class="pt-2" style="">
                     {% for record in product.prices.all %}
-                    <img src="{{record.img}}" class="m-auto" style="width:25%">
+                    <img src="{{record.img}}" class="m-auto" style="width:50%">
                     {% endfor %}
                 </div>
             </div>
@@ -37,11 +37,11 @@
                 <ul class="pt-3">
                     {% for price in product.prices.all %}
                     <li class="d-inline-block">
-                        <p class="d-inline-block border p-2">Price: {{ price.price }}</p>
-                        <p class="d-inline-block border p-2">Size: {{ price.size }}</p>
-                        <p class="d-inline-block border p-2">Color: {{ price.color }}</p>
-                        <p class="d-inline-block border p-2">Weight: {{ price.weight }}</p>
-                        <p class="d-inline-block border p-2">Stock: {{ price.stock }}</p>
+                        <p class="d-inline-block border p-2">المقاس: {{ price.size }}</p>
+                        <p class="d-inline-block border p-2">اللون: {{ price.color }}</p>
+                        <p class="d-inline-block border p-2">الوزن / الحجم: {{ price.weight }}</p>
+                        <p class="d-inline-block border p-2">السعر: {{ price.price }}</p>
+                        <p class="d-inline-block border p-2">التوافر: {{ price.stock }} قطعة</p>
                     </li>
                     {% endfor %}
                 </ul>
